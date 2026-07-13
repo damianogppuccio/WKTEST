@@ -39,8 +39,8 @@
    ═══════════════════════════════════════ */
 
 var VACANZE = {
-  inizio: "01/08/2026",     /* primo giorno di pausa  (GG/MM/AAAA) */
-  fine:   "31/08/2026",     /* ultimo giorno di pausa (GG/MM/AAAA) */
+  inizio: "01/07/2026",     /* primo giorno di pausa  (GG/MM/AAAA) */
+  fine:   "31/07/2026",     /* ultimo giorno di pausa (GG/MM/AAAA) */
 };
 
 
