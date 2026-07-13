@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Calendario Webinar Genya — Indiretta</title>
+<link rel="stylesheet" href="stile.css?v=2">
+</head>
+<body>
+
+<div class="cal" id="cal">
+  <div class="cal-wrap">
+    <div class="cal-header">
+      <div class="cal-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><line x1="16" y1="3" x2="16" y2="7"/><line x1="8" y1="3" x2="8" y2="7"/><line x1="4" y1="11" x2="20" y2="11"/><circle cx="12" cy="16" r="1.2" fill="currentColor" stroke="none"/></svg>
+        Calendario webinar Genya
+      </div>
+      <div class="cal-accent"></div>
+      <div class="cal-sub">Caricamento eventi…</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* ── INDIRETTA: nasconde i Q&A ── */
+  var MOSTRA_QA = false;
+</script>
+
+<script>
+  (function(){
+    function fail(msg){
+      var el = document.querySelector('.cal-sub');
+      if (el) el.textContent = msg;
+    }
+    var s = document.createElement('script');
+    s.src = 'events.js?v=' + Date.now();
+    s.onload = function(){
+      var m = document.createElement('script');
+      m.src = 'calendario.js?v=' + Date.now();
+      m.onerror = function(){ fail('Errore caricamento motore'); };
+      document.body.appendChild(m);
+    };
+    s.onerror = function(){ fail('Errore caricamento eventi'); };
+    document.body.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
