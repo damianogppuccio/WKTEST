@@ -270,17 +270,15 @@
       + '</div>';
   }
 
-  /* ── Render principale ── */
-  function render() {
-    var now = nowRome();
+  /* ── Costruisce l'HTML interno della vista VACANZE ── */
+  function viewVacanze() {
+    return buildHeader('Pausa estiva') + buildVacanze();
+  }
 
-    /* Finestra vacanze: priorità assoluta su tutto */
-    if (inVacanze(now)) {
-      document.getElementById('cal').innerHTML =
-        '<div class="cal-wrap">' + buildHeader('Pausa estiva') + buildVacanze() + '</div>';
-      return;
-    }
-
+  /* ── Costruisce l'HTML interno della vista CALENDARIO ──
+     Mostra sempre i prossimi eventi futuri, anche durante le
+     vacanze (nella fase "calendario" dell'animazione: settembre). ── */
+  function viewCalendario(now) {
     var mostraQa = (typeof MOSTRA_QA !== 'undefined') && MOSTRA_QA === true;
 
     var webinars = prepareList(typeof WEBINAR !== 'undefined' ? WEBINAR : [], 'webinar');
@@ -311,12 +309,118 @@
       ? '<div class="talk-section">' + buildTalk(activeTalk, now) + '</div>'
       : '';
 
-    document.getElementById('cal').innerHTML = ''
-      + '<div class="cal-wrap">'
-      +   buildHeader('Prossimi eventi in programma')
-      +   '<div class="cal-body">' + rows + '</div>'
-      +   talkSection
-      + '</div>';
+    return ''
+      + buildHeader('Prossimi eventi in programma')
+      + '<div class="cal-body">' + rows + '</div>'
+      + talkSection;
+  }
+
+  /* ── Stato animazione (solo durante le vacanze) ── */
+  var VAC_IMG_MS  = 20000;   /* durata fase immagine   : 20s */
+  var VAC_CAL_MS  = 60000;   /* durata fase calendario : 60s */
+  var VAC_SLIDE_MS = 600;    /* durata transizione slide */
+
+  var vacTimer = null;       /* timer del ciclo animazione */
+  var vacPhase = null;       /* 'img' | 'cal' — fase corrente */
+
+  function stopVacCycle() {
+    if (vacTimer) { clearTimeout(vacTimer); vacTimer = null; }
+    vacPhase = null;
+  }
+
+  /* Inietta una vista dentro il wrapper con slide orizzontale.
+     direction: 'in-from-right' (entra da dx) o 'in-from-left'. */
+  function slideTo(innerHTML, fromRight) {
+    var cal = document.getElementById('cal');
+    var wrap = cal.querySelector('.cal-wrap');
+    if (!wrap) {
+      cal.innerHTML = '<div class="cal-wrap">' + innerHTML + '</div>';
+      return;
+    }
+    /* nuovo strato che entra */
+    var incoming = document.createElement('div');
+    incoming.className = 'cal-slide';
+    incoming.style.transform = 'translateX(' + (fromRight ? '100%' : '-100%') + ')';
+    incoming.innerHTML = innerHTML;
+
+    /* strato uscente = contenuto attuale */
+    var outgoing = document.createElement('div');
+    outgoing.className = 'cal-slide';
+    outgoing.style.transform = 'translateX(0)';
+    while (wrap.firstChild) { outgoing.appendChild(wrap.firstChild); }
+
+    wrap.style.position = 'relative';
+    wrap.appendChild(outgoing);
+    wrap.appendChild(incoming);
+
+    /* forza reflow poi anima */
+    void incoming.offsetWidth;
+    incoming.style.transition = 'transform ' + VAC_SLIDE_MS + 'ms ease';
+    outgoing.style.transition = 'transform ' + VAC_SLIDE_MS + 'ms ease';
+    incoming.style.transform = 'translateX(0)';
+    outgoing.style.transform = 'translateX(' + (fromRight ? '-100%' : '100%') + ')';
+
+    setTimeout(function(){
+      /* al termine, incoming diventa l'unico contenuto */
+      wrap.innerHTML = '';
+      wrap.style.position = '';
+      while (incoming.firstChild) { wrap.appendChild(incoming.firstChild); }
+    }, VAC_SLIDE_MS + 30);
+  }
+
+  /* Avvia/continua il ciclo immagine↔calendario durante le vacanze */
+  function vacCycle() {
+    var now = nowRome();
+
+    /* se nel frattempo le vacanze sono finite, torna al render normale */
+    if (!inVacanze(now)) {
+      stopVacCycle();
+      render();
+      return;
+    }
+
+    if (vacPhase === 'img') {
+      /* passa al calendario: entra da destra */
+      slideTo(viewCalendario(now), true);
+      vacPhase = 'cal';
+      vacTimer = setTimeout(vacCycle, VAC_CAL_MS);
+    } else {
+      /* passa all'immagine: entra da sinistra */
+      slideTo(viewVacanze(), false);
+      vacPhase = 'img';
+      vacTimer = setTimeout(vacCycle, VAC_IMG_MS);
+    }
+  }
+
+  /* ── Render principale ── */
+  function render() {
+    var now = nowRome();
+
+    /* ══ MODALITÀ VACANZE ══ */
+    if (inVacanze(now)) {
+      /* Se il ciclo è già attivo, non ridisegnare: lascia animare.
+         Aggiorna solo i badge se siamo in fase calendario. */
+      if (vacPhase) {
+        if (vacPhase === 'cal') {
+          var wrap = document.getElementById('cal').querySelector('.cal-wrap');
+          if (wrap && !wrap.querySelector('.cal-slide')) {
+            wrap.innerHTML = viewCalendario(now);
+          }
+        }
+        return;
+      }
+      /* Primo ingresso: mostra l'immagine e avvia il ciclo */
+      document.getElementById('cal').innerHTML =
+        '<div class="cal-wrap">' + viewVacanze() + '</div>';
+      vacPhase = 'img';
+      vacTimer = setTimeout(vacCycle, VAC_IMG_MS);
+      return;
+    }
+
+    /* ══ MODALITÀ NORMALE ══ */
+    stopVacCycle();
+    document.getElementById('cal').innerHTML =
+      '<div class="cal-wrap">' + viewCalendario(now) + '</div>';
   }
 
   render();

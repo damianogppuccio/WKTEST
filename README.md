@@ -535,6 +535,17 @@ var VACANZE = {
 | **Scope** | Solo widget sidebar. Il calendario mensile (alpha) non è coinvolto. |
 | **Testo** | Il messaggio è definito nel motore (`calendario.js`): menziona la pausa di webinar e Academy Talks, il ritorno a settembre e la disponibilità dei contenuti on-demand. |
 
+### 14.4-bis Animazione durante la pausa
+
+Durante la finestra vacanze il widget non resta fermo sull'immagine: cicla in continuo tra due viste con una transizione a scorrimento orizzontale (0,6s).
+
+| Fase | Durata | Cosa mostra |
+|---|---|---|
+| Immagine | 20 secondi | Banner "Buone vacanze" (spiaggia) |
+| Calendario | 60 secondi | I prossimi eventi reali (settembre): così il cliente in pausa vede cosa lo aspetta al rientro |
+
+Il ciclo è: immagine (20s) → calendario (60s) → immagine (20s) → … all'infinito, finché dura la finestra vacanze. I badge LIVE / Tra poco live restano attivi anche nella fase calendario. Alla fine della finestra (1° settembre) il ciclo si ferma da solo e il widget torna alla vista calendario statica.
+
 ### 14.5 Test consigliato prima del rilascio
 
 Per verificare il banner in anteprima senza aspettare agosto: impostare temporaneamente `inizio` a oggi e `fine` a domani, aprire il widget, verificare il banner, poi ripristinare le date reali.
@@ -550,3 +561,4 @@ Per verificare il banner in anteprima senza aspettare agosto: impostare temporan
 | Maggio 2026 | v3.0 (in sviluppo) | Calendario mensile con griglia lun-ven, navigazione 4 mesi, filtri, popup overflow, dot live |
 | Luglio 2026 | v2.1 | Modalità Pausa Estiva: banner "Buone vacanze" illustrato (SVG inline) con finestra date configurabile in events.js, priorità assoluta, auto-scadenza |
 | Luglio 2026 | v2.2 | Hardening e pulizia: escape HTML su titoli (caratteri speciali sicuri), validazione link (solo https), validazione orari (fine > inizio), icone SVG inline al posto del CDN Tabler (zero dipendenze esterne), CSS estratto in stile.css condiviso, ricarica automatica completa ogni 60 minuti per pagine lasciate aperte |
+| Luglio 2026 | v2.3 | Animazione pausa estiva: durante la finestra vacanze il widget cicla tra immagine (20s) e prossimi eventi di settembre (60s) con transizione a scorrimento orizzontale |

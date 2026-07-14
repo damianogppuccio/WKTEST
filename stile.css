@@ -71,3 +71,12 @@ body { background:transparent; font-family:'Segoe UI',Arial,sans-serif; }
 .talk-chevron { flex-shrink:0; color:#85BC20; }
 
 @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+/* ── Slide animazione modalità vacanze ── */
+.cal-wrap { position:relative; }
+.cal-slide {
+  position:absolute; top:0; left:0; right:0; bottom:0;
+  display:flex; flex-direction:column;
+  background:#fff; overflow:hidden;
+  will-change:transform;
+}
