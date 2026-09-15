@@ -111,10 +111,18 @@ var TALKS = [
    ╚══════════════════════════════════════════════════════════════════╝ */
 
 var WEBINAR_ARCA = [
+{ data:"29/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Logistica di magazzino, le fasi del progetto", 			link:"https://academy.wolterskluwer.it/learn/courses/822/logistica-di-magazzino-le-fasi-del-progetto-del-29102026" },
+{ data:"12/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Novità release", 										link:"https://academy.wolterskluwer.it/learn/courses/824/webinar-novita-release-del-12112026" },
+{ data:"26/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Valorizzazioni di magazzino", 							link:"https://academy.wolterskluwer.it/learn/courses/825/valorizzazioni-di-magazzino-del-26112026" },
+{ data:"22/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Procedure di fine anno – contabilità e magazzino", 		link:"https://academy.wolterskluwer.it/learn/courses/827/procedure-di-fine-anno-contabilita-e-magazzino-del-22122026" },
 ];
 
 var QA_ARCA = [
+{ data:"17/09/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Bilanci infrannuali – question time", 					link:"https://academy.wolterskluwer.it/learn/courses/820/bilanci-infrannuali-question-time-del-17092026/sessions/205/BRV8ZD5" },
 ];
 
 var TALKS_ARCA = [
+{ data:"06/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"I Voucher Cloud & Cybersecurity del MIMIT: come finanziare la trasformazione digitale e la sicurezza informatica della tua impresa", link:"https://academy.wolterskluwer.it/learn/courses/821/06102026-i-voucher-cloud-cybersecurity-del-mimit-come-finanziare-la-trasformazione-digitale-e-la-sicurezza-informatica-della-tua-impresa" },
+{ data:"10/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Attrazione e gestione di risorse di talento in azienda", 																			link:"https://academy.wolterskluwer.it/learn/courses/823/10112026-attrazione-e-gestione-di-risorse-di-talento-in-azienda" },
+{ data:"10/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Adeguati assetti e organizzazione aziendale", 																						link:"https://academy.wolterskluwer.it/learn/courses/826/10122026-adeguati-assetti-e-organizzazione-aziendale" },
 ];
