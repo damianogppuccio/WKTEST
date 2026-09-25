@@ -81,6 +81,11 @@ var WEBINAR = [
   { data:"29/09/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Genya News - Novità e rilasci",                    link:"https://academy.wolterskluwer.it/learn/learning-plans/96/genya-news-novita-e-rilasci?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
   { data:"30/09/2026", ora_inizio:"11:30", ora_fine:"12:30", titolo:"Contabilità Generale Avanzata",                    link:"https://academy.wolterskluwer.it/learn/learning-plans/43/contabilita-generale-avanzata/courses/800/contabilita-generale-avanzata-del-30092026?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
   { data:"30/09/2026", ora_inizio:"14:30", ora_fine:"15:30", titolo:"Modello 770",                                      link:"https://academy.wolterskluwer.it/learn/learning-plans/51/modello-770/courses/792/modello-770-del-30092026?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
+  { data:"01/10/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Overview",                                         link:"" },
+  { data:"01/10/2026", ora_inizio:"11:15", ora_fine:"12:15", titolo:"Contabilità IVA base",                             link:"" },
+  { data:"06/10/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Contabilità Generale Base ed Estratto Conto",      link:"" },
+  { data:"06/10/2026", ora_inizio:"11:15", ora_fine:"12:15", titolo:"Contabilità Generale Avanzato",                    link:"" },
+  { data:"07/10/2026", ora_inizio:"14:30", ora_fine:"15:30", titolo:"Liquidazione IVA/Ritenute acconto/F24",            link:"" },
 ];
 
 
@@ -93,6 +98,9 @@ var QA = [
   { data:"11/09/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Sessione di Q&A",      link:"https://academy.wolterskluwer.it/learn/learning-plans/76/sessione-di-qa/courses/788/sessione-di-qa-del-11092026?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
   { data:"18/09/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Sessione di Q&A",      link:"https://academy.wolterskluwer.it/learn/learning-plans/76/sessione-di-qa/courses/789/sessione-di-qa-del-18092026?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
   { data:"25/09/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Sessione di Q&A",      link:"https://academy.wolterskluwer.it/learn/learning-plans/76/sessione-di-qa/courses/790/sessione-di-qa-del-25092026?utm_source=calendario_eventi&utm_medium=link&utm_campaign=ita_academy_genya_webinar_calendario_q1_202609" },
+
+  /* ── OTTOBRE 2026 — link da compilare ── */
+  { data:"02/10/2026", ora_inizio:"10:00", ora_fine:"11:00", titolo:"Sessione di Q&A",      link:"" },
 ];
 
 
@@ -111,18 +119,18 @@ var TALKS = [
    ╚══════════════════════════════════════════════════════════════════╝ */
 
 var WEBINAR_ARCA = [
-{ data:"29/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Logistica di magazzino, le fasi del progetto", 			link:"https://academy.wolterskluwer.it/learn/courses/822/logistica-di-magazzino-le-fasi-del-progetto-del-29102026" },
-{ data:"12/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Novità release", 										link:"https://academy.wolterskluwer.it/learn/courses/824/webinar-novita-release-del-12112026" },
-{ data:"26/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Valorizzazioni di magazzino", 							link:"https://academy.wolterskluwer.it/learn/courses/825/valorizzazioni-di-magazzino-del-26112026" },
-{ data:"22/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Procedure di fine anno – contabilità e magazzino", 		link:"https://academy.wolterskluwer.it/learn/courses/827/procedure-di-fine-anno-contabilita-e-magazzino-del-22122026" },
+  { data:"29/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Logistica di magazzino, le fasi del progetto",       link:"https://academy.wolterskluwer.it/learn/courses/822/logistica-di-magazzino-le-fasi-del-progetto-del-29102026" },
+  { data:"12/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Novità release",                                     link:"https://academy.wolterskluwer.it/learn/courses/824/webinar-novita-release-del-12112026" },
+  { data:"26/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Valorizzazioni di magazzino",                        link:"https://academy.wolterskluwer.it/learn/courses/825/valorizzazioni-di-magazzino-del-26112026" },
+  { data:"22/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Procedure di fine anno – contabilità e magazzino",   link:"https://academy.wolterskluwer.it/learn/courses/827/procedure-di-fine-anno-contabilita-e-magazzino-del-22122026" },
 ];
 
 var QA_ARCA = [
-{ data:"17/09/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Bilanci infrannuali – question time", 					link:"https://academy.wolterskluwer.it/learn/courses/820/bilanci-infrannuali-question-time-del-17092026/sessions/205/BRV8ZD5" },
+  { data:"17/09/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Bilanci infrannuali – question time",              link:"https://academy.wolterskluwer.it/learn/courses/820/bilanci-infrannuali-question-time-del-17092026/sessions/205/BRV8ZD5" },
 ];
 
 var TALKS_ARCA = [
-{ data:"06/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"I Voucher Cloud & Cybersecurity del MIMIT: come finanziare la trasformazione digitale e la sicurezza informatica della tua impresa", link:"https://academy.wolterskluwer.it/learn/courses/821/06102026-i-voucher-cloud-cybersecurity-del-mimit-come-finanziare-la-trasformazione-digitale-e-la-sicurezza-informatica-della-tua-impresa" },
-{ data:"10/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Attrazione e gestione di risorse di talento in azienda", 																			link:"https://academy.wolterskluwer.it/learn/courses/823/10112026-attrazione-e-gestione-di-risorse-di-talento-in-azienda" },
-{ data:"10/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Adeguati assetti e organizzazione aziendale", 																						link:"https://academy.wolterskluwer.it/learn/courses/826/10122026-adeguati-assetti-e-organizzazione-aziendale" },
+  { data:"06/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"I Voucher Cloud & Cybersecurity del MIMIT: come finanziare la trasformazione digitale e la sicurezza informatica della tua impresa", link:"https://academy.wolterskluwer.it/learn/courses/821/06102026-i-voucher-cloud-cybersecurity-del-mimit-come-finanziare-la-trasformazione-digitale-e-la-sicurezza-informatica-della-tua-impresa" },
+  { data:"10/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Attrazione e gestione di risorse di talento in azienda",  link:"https://academy.wolterskluwer.it/learn/courses/823/10112026-attrazione-e-gestione-di-risorse-di-talento-in-azienda" },
+  { data:"10/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Adeguati assetti e organizzazione aziendale",       link:"https://academy.wolterskluwer.it/learn/courses/826/10122026-adeguati-assetti-e-organizzazione-aziendale" },
 ];
