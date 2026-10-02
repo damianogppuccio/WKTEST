@@ -156,7 +156,6 @@ var QA_ARCA = [
 ];
 
 var TALKS_ARCA = [
-  { data:"06/10/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"I Voucher Cloud & Cybersecurity del MIMIT: come finanziare la trasformazione digitale e la sicurezza informatica della tua impresa", link:"https://academy.wolterskluwer.it/learn/courses/821/06102026-i-voucher-cloud-cybersecurity-del-mimit-come-finanziare-la-trasformazione-digitale-e-la-sicurezza-informatica-della-tua-impresa" },
   { data:"10/11/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Attrazione e gestione di risorse di talento in azienda",  link:"https://academy.wolterskluwer.it/learn/courses/823/10112026-attrazione-e-gestione-di-risorse-di-talento-in-azienda" },
   { data:"10/12/2026", ora_inizio:"11:00", ora_fine:"12:00", titolo:"Adeguati assetti e organizzazione aziendale",       link:"https://academy.wolterskluwer.it/learn/courses/826/10122026-adeguati-assetti-e-organizzazione-aziendale" },
 ];
