@@ -1,0 +1,25 @@
+VISTE CALENDARIO PER LA HOME ACADEMY
+====================================
+
+Contenuto: home.html, home.js, home.css
+(questo LEGGIMI non serve su GitHub, puoi non caricarlo)
+
+COME CARICARLI
+1. Apri https://github.com/damianogppuccio/WKTEST
+2. "Add file" > "Upload files"
+3. Trascina i tre file: devono stare nella cartella principale,
+   accanto a events.js (non dentro una sottocartella)
+4. "Commit changes"
+5. Aspetta 1-2 minuti: GitHub Pages si aggiorna da solo
+
+VERIFICA
+- https://damianogppuccio.github.io/WKTEST/home.html?vista=webinar&canale=genya&qa=1
+- https://damianogppuccio.github.io/WKTEST/home.html?vista=talk&canale=genya
+
+Sono gli stessi indirizzi gia' impostati nei due riquadri della home in sandbox:
+quando le due pagine si aprono, anche la home smette di mostrare "404".
+
+NOTE
+- Gli eventi si modificano sempre e solo in events.js: questi file non vanno toccati.
+- Non sostituiscono nulla del calendario esistente (calendario.js, stile.css, diretta.html...).
+- Per Arca: canale=arca al posto di canale=genya.

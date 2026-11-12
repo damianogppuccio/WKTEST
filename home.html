@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Academy — prossimi eventi</title>
+<link rel="stylesheet" href="home.css?v=1">
+</head>
+<body>
+
+<!-- Viste per la home Academy. Parametri nell'indirizzo:
+       vista=webinar|talk   canale=genya|arca   qa=1 (mostra anche i Q&A)
+     Esempio: home.html?vista=webinar&canale=genya&qa=1
+     I dati arrivano da events.js, lo stesso file del calendario. -->
+
+<div id="home"><p class="msg">Caricamento eventi…</p></div>
+
+<script>
+  (function(){
+    function fail(msg){
+      var el = document.getElementById('home');
+      if (el) el.innerHTML = '<p class="msg">' + msg + '</p>';
+    }
+    var s = document.createElement('script');
+    s.src = 'events.js?v=' + Date.now();
+    s.onload = function(){
+      var m = document.createElement('script');
+      m.src = 'home.js?v=' + Date.now();
+      m.onerror = function(){ fail('Il calendario non è disponibile in questo momento.'); };
+      document.body.appendChild(m);
+    };
+    s.onerror = function(){ fail('Il calendario non è disponibile in questo momento.'); };
+    document.body.appendChild(s);
+  })();
+</script>
+
+</body>
+</html>
